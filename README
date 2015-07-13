@@ -1,2 +1,8 @@
 Antway is base on the basic rule of the Langton Ant but some addtions.
-
+Basic rule:
+1. All the grids are white in the begining.
+2. Ant will move left if grid which it's in is white and change the grid to black.
+3. Ant will move right if grid which it's in is black and change the grid to white.
+Additional rule for Ants meet:
+4. 2 ants will move to same grid: a. The ants won't move if the grids which the ants move from have the same color; b. The ant will won if the grid is black and another will be defeated (dead).
+5. Several ants will move to same grid: pending and tbd.
