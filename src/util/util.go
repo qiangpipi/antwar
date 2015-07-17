@@ -84,3 +84,19 @@ func (p Position) GetRight(d int) Position {
 	}
 	return t
 }
+
+func (fromP Position) GetDirection(toP Position) int {
+	v := Position{toP.X - fromP.X, toP.Y - fromP.Y}
+	var direction int
+	switch v {
+	case Position{1, 0}:
+		direction = East
+	case Position{0, 1}:
+		direction = South
+	case Position{-1, 0}:
+		direction = West
+	case Position{0, -1}:
+		direction = North
+	}
+	return direction
+}

@@ -28,26 +28,29 @@ func CreateGrids(l, w int) Grids {
 	return gs
 }
 
-func (g Grids) GetGrid(p Position) *Grid {
-	return g[p]
+func (gs Grids) GetGrid(p Position) *Grid {
+	return gs[p]
 }
 
-func (g *Grids) PutAnt(a ants.Ant, p Position) {
-	g.GetGrid(p).AntIn(&a)
+func (gs *Grids) PutAnt(a ants.Ant, p Position) {
+	gs.GetGrid(p).AntIn(&a)
 }
 
-func (g *Grids) MoveAnt(fromP Position) {
+func (gs *Grids) MoveAnt(fromP Position) {
 	//Get new position
-	var toP Position
-	switch g.GetGrid(p).Color {
+	toP := fromP.GetLeft(gs.GetGrid(fromP).Ant.Direction)
+	g := gs.GetGrid(fromP)
+	switch g.Color {
 	case Black:
-		toP = fromP.GetLeft(g.GetGrid(p).Ant.Direction)
 		//Get new direction
+		nd := fromP.GetDirection(toP)
 		//Set new direction
+		g.Ant.ChangeDirection(nd)
 	case White:
-		toP = fromP.GetRight(g.GetGrid(p).Ant.Direction)
 		//Get new direction
+		nd := fromP.GetDirection(toP)
 		//Set new direction
+		g.Ant.ChangeDirection(nd)
 	}
 	//Left grid
 	//In new grid

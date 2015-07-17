@@ -9,13 +9,9 @@ type Ant struct {
 	IsAlive   bool
 }
 
-type Ants map[Postion]*Ant
+type Ants map[Position]*Ant
 
-func (as *Ants) AddAnt(a *Ant, p Position) {
-	as[p] = a
-}
-
-func (as *Ants) FindAnt(p Postion) *Ant {
+func (as Ants) FindAnt(p Position) *Ant {
 	return as[p]
 }
 
