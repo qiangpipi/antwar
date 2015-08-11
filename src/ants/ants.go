@@ -12,13 +12,16 @@ type Ant struct {
 
 type Ants map[Position]*Ant
 
-func newAnt() Ant {
-	a := Ant{rand.Intn(3), true}
+func newAnt() *Ant {
+	a := &Ant{rand.Intn(3), true}
 	return a
 }
 
 func NewAnts(n int) Ants {
+	//n=1 is just temp solution
+	n = 1
 	as := make(map[Position]*Ant, n)
+	as[Position{Top.X / 2, Top.Y / 2}] = newAnt()
 	return as
 }
 

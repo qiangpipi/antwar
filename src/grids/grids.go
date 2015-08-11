@@ -36,8 +36,14 @@ func (gs Grids) GetGrid(p Position) *Grid {
 	return gs[p]
 }
 
-func (gs *Grids) PutAnt(a ants.Ant, p Position) {
-	gs.GetGrid(p).AntIn(&a)
+func (gs *Grids) putAnt(a *ants.Ant, p Position) {
+	gs.GetGrid(p).AntIn(a)
+}
+
+func (gs *Grids) PutAnts(as ants.Ants) {
+	for p, a := range as {
+		gs.putAnt(a, p)
+	}
 }
 
 func (gs *Grids) MoveAnt(fromP Position) {
