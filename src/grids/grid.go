@@ -40,3 +40,9 @@ func (g *Grid) AntLeft() {
 func (g *Grid) AntIn(a *ants.Ant) {
 	g.Ant = a
 }
+
+func (g *Grid) KillAnt() {
+	if g.Ant != nil {
+		g.Ant.Killed()
+	}
+}
