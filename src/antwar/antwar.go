@@ -1,19 +1,20 @@
 package main
 
 import (
-	"ants"
+	//	"ants"
 	"fmt"
-	"grids"
-	. "util"
+	//	"grids"
+	//	. "util"
+	"world"
 )
 
 func main() {
-	grids := grids.CreateGrids(31, 31)
-	for k, v := range grids {
+	W := world.NewWorld(31, 31)
+	for k, v := range W {
 		fmt.Println(k, v)
 	}
-	ant := ants.Ant{1, true}
-	grids.PutAnt(ant, Position{10, 10})
-	grids[Position{10, 10}].SetColor(Black)
-	fmt.Println(grids[Position{10, 10}])
+	//	ant := ants.Ant{1, true}
+	//	grids.PutAnt(ant, Position{10, 10})
+	//	grids[Position{10, 10}].SetColor(Black)
+	//	fmt.Println(grids[Position{10, 10}])
 }

@@ -1,13 +1,16 @@
 package world
 
 import (
-	"ants"
+	//	"ants"
 	"grids"
-	"util"
+	//	. "util"
 )
 
 //New grids create
-//Grids init with white
+func NewWorld(length, width int) grids.Grids {
+	return grids.CreateGrids(length, width)
+}
+
 //Put ants in grids
 //All ants are living and random direction
 

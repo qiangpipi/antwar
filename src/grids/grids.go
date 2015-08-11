@@ -9,6 +9,7 @@ var length int
 var width int
 
 func setLW(l, w int) {
+	//Set the size of the grids
 	length = l
 	width = w
 	SetTop(l, w)
@@ -17,6 +18,9 @@ func setLW(l, w int) {
 type Grids map[Position]*Grid
 
 func CreateGrids(l, w int) Grids {
+	//Set length and width of the world
+	//Full the world with grids
+	//Set all the grids with white color in init
 	setLW(l, w)
 	gs := make(map[Position]*Grid, l*w)
 	for x := 0; x < l; x++ {

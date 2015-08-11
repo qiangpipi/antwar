@@ -12,9 +12,14 @@ type Ant struct {
 
 type Ants map[Position]*Ant
 
-func NewAnt() Ant {
+func newAnt() Ant {
 	a := Ant{rand.Intn(3), true}
 	return a
+}
+
+func NewAnts(n int) Ants {
+	as := make(map[Position]*Ant, n)
+	return as
 }
 
 func (as Ants) FindAnt(p Position) *Ant {
