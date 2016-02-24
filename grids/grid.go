@@ -1,8 +1,8 @@
 package grids
 
 import (
-	"ants"
-	. "util"
+	"antwar/ants"
+	. "antwar/util"
 )
 
 type Grid struct {

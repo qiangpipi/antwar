@@ -1,7 +1,7 @@
 package main
 
 import (
-	"ants"
+	"antwar/ants"
 	"fmt"
 	"grids"
 	//	. "util"
@@ -13,7 +13,7 @@ func main() {
 		fmt.Println(k, v)
 	}
 	//Create ants
-	ants := ants.NewAnts(5)
+	ant := ants.NewAnt()
 	//Put ants in the grids
 	world.PutAnts(ants)
 }
