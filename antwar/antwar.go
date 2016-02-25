@@ -1,19 +1,15 @@
 package main
 
 import (
-	"antwar/ants"
+	//	"antwar/ant"
+	//	"antwar/grid"
+	"antwar/world"
 	"fmt"
-	"grids"
-	//	. "util"
 )
 
 func main() {
-	world := grids.CreateGrids(31, 31)
-	for k, v := range world {
+	myworld := world.CreateWorld(2)
+	for k, v := range myworld.Grids {
 		fmt.Println(k, v)
 	}
-	//Create ants
-	ant := ants.NewAnt()
-	//Put ants in the grids
-	world.PutAnts(ants)
 }

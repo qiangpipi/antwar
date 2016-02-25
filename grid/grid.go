@@ -1,13 +1,20 @@
-package grids
+package grid
 
 import (
-	"antwar/ants"
+	"antwar/ant"
 	. "antwar/util"
+	//	"fmt"
 )
 
 type Grid struct {
+	Pos   Position
 	Color int
-	Ant   *ants.Ant
+	Ant   *ant.Ant
+}
+
+func NewGrid(p Position) *Grid {
+	g := &Grid{p, White, nil}
+	return g
 }
 
 func (g *Grid) SetColor(c int) {
@@ -26,18 +33,21 @@ func (g Grid) GetColor() (c int) {
 	return g.Color
 }
 
-func (g *Grid) AntLeft() {
-	g.Ant = nil
+func (g *Grid) ChangeColor() {
 	if g.Color == White {
 		g.setBlack()
-		//Get direction of right
-	} else {
+	} else if g.Color == Black {
 		g.setWhite()
-		//Get direction of left
 	}
 }
 
-func (g *Grid) AntIn(a *ants.Ant) {
+func (g *Grid) AntLeave() {
+	g.Ant = nil
+	//Change color
+	g.ChangeColor()
+}
+
+func (g *Grid) AntIn(a *ant.Ant) {
 	g.Ant = a
 }
 

@@ -1,4 +1,4 @@
-package ants
+package ant
 
 import (
 	//	"math/rand"
@@ -7,13 +7,14 @@ import (
 
 type Ant struct {
 	Direction int
+	Pos       Position
 	IsAlive   bool
 }
 
 type Ants map[Position]*Ant
 
-func NewAnt() *Ant {
-	a := &Ant{West, true}
+func NewAnt(p Position) *Ant {
+	a := &Ant{West, p, true}
 	return a
 }
 
